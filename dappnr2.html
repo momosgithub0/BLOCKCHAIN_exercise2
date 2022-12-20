@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Call balanceOf() function</title>
+  <h1> balanceOf() function </h1>
+  <body>
+    <button id="getBalanceBtn">Get Balance</button>
+  </body>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script>
+    const web3 = new Web3('https://goerli.infura.io/v3/35f34293fdd643cd96ba8546d2c0bd77');  // API Key from Infura
+    const contractAddress = '0xf1ab33DdDacC089DBA84FA5936574227AA83F606';
+    const contractABI = [
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+];
+    const getBalanceBtn = document.getElementById("getBalanceBtn");
+    const contract = new web3.eth.Contract(contractABI, contractAddress);
+    getBalanceBtn.addEventListener('click', async () => {
+        const accounts = await window.ethereum.enable();
+        const address = accounts[0];
+        const balance = await contract.methods.balanceOf(address).call();
+        alert(balance);     // displaying balance in wei
+    })
+
+
+    
+</script>
