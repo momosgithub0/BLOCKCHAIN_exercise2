@@ -10,7 +10,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <script>
-    const web3 = new Web3('https://goerli.infura.io/v3/35f34293fdd643cd96ba8546d2c0bd77');  // API Key from Infura
+    const web3 = new Web3(window.web3.currentProvider);  
     const contractAddress = '0xf1ab33DdDacC089DBA84FA5936574227AA83F606';
     const contractABI = [
     {
