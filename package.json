@@ -1,11 +1,22 @@
 {
   "name": "dappweb3jsnr2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momosgithub0/exercise2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/momosgithub0/exercise2/issues"
+  },
+  "homepage": "https://github.com/momosgithub0/exercise2#readme",
+  "description": "",
+  "dependencies": {
+    "node": "^19.3.0"
+  }
 }
